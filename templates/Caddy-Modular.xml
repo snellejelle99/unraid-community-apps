@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Caddy Modular</Name>
+  <Repository>ghcr.io/snellejelle99/caddy-modular:latest</Repository>
+  <Registry>https://github.com/snellejelle99/Caddy-Modular/pkgs/container/caddy-modular</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <MyMAC/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project>https://caddyserver.com/</Project>
+  <ReadMe>https://raw.githubusercontent.com/snellejelle99/Caddy-Modular/refs/heads/main/README.md</ReadMe>
+  <License>MIT</License>
+  <Overview>This container builds and runs the latest version of Caddy with the specified modules included. This allows you to run a container with any of the modules available here: https://caddyserver.com/docs/modules. This is especially usefull if you want to use your own DNS provider for the DNS bases TLS challenge.</Overview>
+  <Category>Network:Web Network:Proxy</Category>
+  <WebUI/>
+  <TemplateURL>https://github.com/snellejelle99/unraid-community-apps/raw/refs/heads/main/templates/Caddy-Modular.xml</TemplateURL>
+  <Icon>https://github.com/snellejelle99/Caddy-Modular/raw/refs/heads/main/caddy.svg</Icon>
+  <ExtraParams></ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText>Sponsor this project</DonateText>
+  <DonateLink>https://github.com/sponsors/snellejelle99</DonateLink>
+  <Requires/>
+  <Config Name="Appdata and Caddyfile" Target="/etc/caddy" Default="/mnt/user/appdata/caddy-modular/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/caddy-modular/</Config>
+  <Config Name="HTTP 80" Target="80" Default="80" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+  <Config Name="TLS 443" Target="443" Default="443" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">443</Config>
+  <Config Name="HTTP/3 port" Target="443" Default="443" Mode="udp" Description="" Type="Port" Display="always" Required="true" Mask="false">443</Config>
+  <Config Name="Variable: CADDY_MODULES" Target="CADDY_MODULES" Default="--with github.com/caddy-dns/duckdns --with github.com/caddy-dns/hetzner/v2 --with github.com/caddy-dns/cloudflare" Mode="{3}" Description="List of caddy modules you want installed.  Example: --with {module_url1} --with {module_url2}" Type="Variable" Display="advanced" Required="false" Mask="false">google.com</Config>
+  <Config Name="Variable: DNS_API_TOKEN" Target="DNS_API_TOKEN" Default="" Mode="{3}" Description="Your dns providers API token for automatic TLS certificate issuance and renewal." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <TailscaleStateDir/>
+</Container>
