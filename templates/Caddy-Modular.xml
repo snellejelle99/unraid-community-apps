@@ -23,7 +23,7 @@
   <WebUI/>
   <TemplateURL>https://github.com/snellejelle99/unraid-community-apps/raw/refs/heads/main/templates/Caddy-Modular.xml</TemplateURL>
   <Icon>https://github.com/snellejelle99/Caddy-Modular/raw/refs/heads/main/caddy.png</Icon>
-  <ExtraParams></ExtraParams>
+  <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DonateText>Sponsor this project</DonateText>
