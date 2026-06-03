@@ -8,25 +8,54 @@
   <MyMAC/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://github.com/snellejelle99/caddy-modular/discussions</Support>
   <Project>https://caddyserver.com/</Project>
-  <ReadMe>https://raw.githubusercontent.com/snellejelle99/Caddy-Modular/refs/heads/main/README.md</ReadMe>
-  <License>MIT</License>
+  <ReadMe>https://github.com/snellejelle99/caddy-modular/blob/main/README.md</ReadMe>
+  <License>Apache-2.0</License>
   <Overview>This container builds and runs the latest version of Caddy with the specified modules included. 
-  This allows you to run a container with any of the modules available here: https://caddyserver.com/docs/modules. 
-  This is especially usefull if you want to use your own DNS provider for the DNS bases TLS challenge.
+  This allows you to run Caddy with any of the modules available here: https://caddyserver.com/docs/modules. 
+  For when you want to:
+    * Use your own DNS provider for the DNS TLS-ALPN challenge
+      * DuckDNS
+      * Cloudflare
+      * Hetzner
+      * And many more...
+    * Use a different storage backend
+      * Redis
+      * MySQL
+      * Postgres
+    * Use other authentication providers
+      * Discord
+      * JWT
+      * LDAP
+      * OAuth 2.0
+    * Set up caching
+      * Redis
+    * Integrate security enhancements
+      * Fail2Ban
+      * Crowdsec
+      * Geoblocking
+      * Block bots and crawlers
+    * Collect metrics
+      * Prometheus
+      * Umami
+    * Run caddy with your own custom modules
+    * Or use any of the other registered caddy modules
+      * https://caddyserver.com/docs/modules
+  
+  * Based on the latest official alpine caddy builder image.
 
   Planned Features:
   * Storing the build binary to speed up restarts
   </Overview>
-  <Category>Network:Web Network:Proxy</Category>
+  <Category>Network:Web Network:Proxy Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://github.com/snellejelle99/unraid-community-apps/raw/refs/heads/main/templates/Caddy-Modular.xml</TemplateURL>
   <Icon>https://github.com/snellejelle99/Caddy-Modular/raw/refs/heads/main/caddy.png</Icon>
   <ExtraParams>--cap-add=NET_ADMIN</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DonateText>Sponsor this project</DonateText>
+  <DonateText>You probably shouldn't donate to me since I only configured a container. But here is a link if you really want to</DonateText>
   <DonateLink>https://github.com/sponsors/snellejelle99</DonateLink>
   <Requires/>
   <Config Name="Appdata and Caddyfile" Target="/etc/caddy" Default="/mnt/user/appdata/caddy-modular/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/caddy-modular/</Config>
@@ -35,6 +64,6 @@
   <Config Name="HTTP/3 port" Target="443" Default="443" Mode="udp" Description="" Type="Port" Display="always" Required="true" Mask="false">443</Config>
   <Config Name="Admin API port" Target="2019" Default="2019" Mode="tcp" Description="" Type="Port" Display="advanced" Required="false" Mask="false">2019</Config>
   <Config Name="Variable: CADDY_MODULES" Target="CADDY_MODULES" Default="--with github.com/caddy-dns/duckdns --with github.com/caddy-dns/hetzner/v2 --with github.com/caddy-dns/cloudflare" Mode="{3}" Description="List of caddy modules you want installed.  Example: --with {module_url1} --with {module_url2}" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
-  <Config Name="Variable: DNS_API_TOKEN" Target="DNS_API_TOKEN" Default="" Mode="{3}" Description="Your dns providers API token for automatic TLS certificate issuance and renewal." Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="Variable: DNS_API_TOKEN" Target="DNS_API_TOKEN" Default="" Mode="{3}" Description="Your dns providers API token for automatic TLS certificate issuance and renewal." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
   <TailscaleStateDir/>
 </Container>
