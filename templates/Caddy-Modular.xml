@@ -48,6 +48,14 @@
   Planned Features:
   * Storing the build binary to speed up restarts
   </Overview>
+  <Requires>Example Caddyfile is created on first run and can be found at appdata location.
+  Check the ReadMe for tutorials.  
+  Default port assignment can conflict with unraid WebUI.  
+  Caddy cannot perform TLS challenges on ports other than 80 and 443.  
+  The unraid WebUI port settings can be changed at Settings/Management Access.  
+  </Requires>
+  <Date>2026-05-28</Date>
+  <Changes></Changes>
   <Category>Network:Web Network:Proxy Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://github.com/snellejelle99/unraid-community-apps/raw/refs/heads/main/templates/Caddy-Modular.xml</TemplateURL>
@@ -57,7 +65,6 @@
   <CPUset/>
   <DonateText>You probably shouldn't donate to me since I only configured a container. But here is a link if you really want to</DonateText>
   <DonateLink>https://github.com/sponsors/snellejelle99</DonateLink>
-  <Requires/>
   <Config Name="Appdata and Caddyfile" Target="/etc/caddy" Default="/mnt/user/appdata/caddy-modular/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/caddy-modular/</Config>
   <Config Name="HTTP 80" Target="80" Default="80" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">80</Config>
   <Config Name="TLS 443" Target="443" Default="443" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">443</Config>
