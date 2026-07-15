@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>Caddy Modular</Name>
-  <Repository>ghcr.io/snellejelle99/caddy-modular:latest</Repository>
-  <Registry>https://github.com/snellejelle99/Caddy-Modular/pkgs/container/caddy-modular</Registry>
+  <Repository>ghcr.io/snellejelle99/caddy-modular</Repository>
+  <Registry>https://github.com/snellejelle99/caddy-modular</Registry>
   <Network>bridge</Network>
   <MyIP/>
   <MyMAC/>
