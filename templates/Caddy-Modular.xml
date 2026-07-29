@@ -71,6 +71,7 @@
   <Config Name="HTTP/3 port" Target="443" Default="443" Mode="udp" Description="" Type="Port" Display="always" Required="true" Mask="false">443</Config>
   <Config Name="Admin API port" Target="2019" Default="2019" Mode="tcp" Description="" Type="Port" Display="advanced" Required="false" Mask="false">2019</Config>
   <Config Name="Variable: CADDY_MODULES" Target="CADDY_MODULES" Default="--with github.com/caddy-dns/duckdns --with github.com/caddy-dns/hetzner/v2 --with github.com/caddy-dns/cloudflare" Mode="{3}" Description="List of caddy modules you want installed.  Example: --with {module_url1} --with {module_url2}" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Variable: CADDY_VERSION_OVERRIDE" Target="CADDY_VERSION_OVERRIDE" Description="Lock caddy build to specific version or branch.  WARNING: this can cause your caddy to stop automatically updating. Only set this when you know what you are doing" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
   <Config Name="Variable: DNS_API_TOKEN" Target="DNS_API_TOKEN" Default="" Mode="{3}" Description="Your dns providers API token for automatic TLS certificate issuance and renewal." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
   <TailscaleStateDir/>
 </Container>
