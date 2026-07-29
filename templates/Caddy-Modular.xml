@@ -2,6 +2,14 @@
 <Container version="2">
   <Name>Caddy Modular</Name>
   <Repository>ghcr.io/snellejelle99/caddy-modular</Repository>
+  <Branch>
+	<Tag>latest</Tag>
+	<TagDescription>(RECOMMENDED) Builds the latest Caddy release.</TagDescription>
+   </Branch>
+   <Branch>
+	<Tag>edge</Tag>
+	<TagDescription>Builds a bleeding edge Caddy including unreleased changes from recent commits.</TagDescription>
+   </Branch>
   <Registry>https://github.com/snellejelle99/caddy-modular</Registry>
   <Network>bridge</Network>
   <MyIP/>
@@ -55,7 +63,11 @@
   The unraid WebUI port settings can be changed at Settings/Management Access.  
   </Requires>
   <Date>2026-05-28</Date>
-  <Changes></Changes>
+  <Changes>
+  ### 2026-07-29  
+  Added ability to build Caddy from most recent commit.  
+  Added ability to override build Caddy version.
+  </Changes>
   <Category>Network:Web Network:Proxy Tools:Utilities</Category>
   <WebUI/>
   <TemplateURL>https://github.com/snellejelle99/unraid-community-apps/raw/refs/heads/main/templates/Caddy-Modular.xml</TemplateURL>
@@ -71,7 +83,7 @@
   <Config Name="HTTP/3 port" Target="443" Default="443" Mode="udp" Description="" Type="Port" Display="always" Required="true" Mask="false">443</Config>
   <Config Name="Admin API port" Target="2019" Default="2019" Mode="tcp" Description="" Type="Port" Display="advanced" Required="false" Mask="false">2019</Config>
   <Config Name="Variable: CADDY_MODULES" Target="CADDY_MODULES" Default="--with github.com/caddy-dns/duckdns --with github.com/caddy-dns/hetzner/v2 --with github.com/caddy-dns/cloudflare" Mode="{3}" Description="List of caddy modules you want installed.  Example: --with {module_url1} --with {module_url2}" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
-  <Config Name="Variable: CADDY_VERSION_OVERRIDE" Target="CADDY_VERSION_OVERRIDE" Description="Lock caddy build to specific version or branch.  WARNING: this can cause your caddy to stop automatically updating. Only set this when you know what you are doing" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="Variable: CADDY_VERSION_OVERRIDE" Target="CADDY_VERSION_OVERRIDE" Default="" Mode="{3}" Description="Lock caddy build to specific version or branch.  WARNING: this can cause your caddy to stop automatically updating. Only set this when you know what you are doing" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
   <Config Name="Variable: DNS_API_TOKEN" Target="DNS_API_TOKEN" Default="" Mode="{3}" Description="Your dns providers API token for automatic TLS certificate issuance and renewal." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
   <TailscaleStateDir/>
 </Container>
