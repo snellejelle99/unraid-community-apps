@@ -64,6 +64,9 @@
   </Requires>
   <Date>2026-05-28</Date>
   <Changes>
+  ### 2026-08-3  
+  Added option to clean build cache after build.  
+  
   ### 2026-07-29  
   Added ability to build Caddy from most recent commit.  
   Added ability to override build Caddy version.
@@ -85,5 +88,6 @@
   <Config Name="Variable: CADDY_MODULES" Target="CADDY_MODULES" Default="--with github.com/caddy-dns/duckdns --with github.com/caddy-dns/hetzner/v2 --with github.com/caddy-dns/cloudflare" Mode="{3}" Description="List of caddy modules you want installed.  Example: --with {module_url1} --with {module_url2}" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Variable: CADDY_VERSION_OVERRIDE" Target="CADDY_VERSION_OVERRIDE" Default="" Mode="{3}" Description="Lock caddy build to specific version or branch.  WARNING: this can cause your caddy to stop automatically updating. Only set this when you know what you are doing" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
   <Config Name="Variable: DNS_API_TOKEN" Target="DNS_API_TOKEN" Default="" Mode="{3}" Description="Your dns providers API token for automatic TLS certificate issuance and renewal." Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+  <Config Name="Variable: CADDY_KEEP_BUILD_CACHE" Target="CADDY_KEEP_BUILD_CACHE" Default="1" Mode="{3}" Description="Set to 0 to clean the build cache after building to save some disk space. This will slow down restarts. Not advised if you have slow internet or a slow CPU" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
   <TailscaleStateDir/>
 </Container>
