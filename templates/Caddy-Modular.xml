@@ -72,6 +72,7 @@
   Added ability to override build Caddy version.
   </Changes>
   <Category>Network:Web Network:Proxy Tools:Utilities</Category>
+  <ExtraSearchTerms>reverse proxy caddy server configuration ssl tls compression security headers certificate automation dns webserver https duckdns</ExtraSearchTerms>
   <WebUI/>
   <TemplateURL>https://github.com/snellejelle99/unraid-community-apps/raw/refs/heads/main/templates/Caddy-Modular.xml</TemplateURL>
   <Icon>https://github.com/snellejelle99/Caddy-Modular/raw/refs/heads/main/caddy.png</Icon>
