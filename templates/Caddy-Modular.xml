@@ -8,7 +8,7 @@
    </Branch>
    <Branch>
 	<Tag>edge</Tag>
-	<TagDescription>Builds a bleeding edge Caddy including unreleased changes from recent commits.</TagDescription>
+	<TagDescription>(ADVANCED) Builds a bleeding edge Caddy including unreleased changes from recent commits. For experienced users that want to test new unreleased features and changes.</TagDescription>
    </Branch>
   <Registry>https://github.com/snellejelle99/caddy-modular</Registry>
   <Network>bridge</Network>
@@ -64,6 +64,9 @@
   </Requires>
   <Date>2026-05-28</Date>
   <Changes>
+  ### 2026-10-14
+  Disabled OCI mediatype so unraid can detect package updates
+
   ### 2026-08-3  
   Added option to clean build cache after build.  
   
